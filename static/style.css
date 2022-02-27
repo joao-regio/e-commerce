@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.center{
+    max-width: 1100;
+    padding: 0 2%;
+    margin: 0 auto;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.clear{
+    clear: both;
+}
+
+header{
+    width: 100%;
+    background-color: rgb(170, 170, 170);
+    height: 40px;
+}
+
+header .logomarca{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+header .logomarca a{
+    text-decoration: none;
+    color: black;
+}
+
+.itens-menu ul{
+    position: relative;
+    list-style-type: none;
+    margin: 10px;
+}
+
+.itens-menu li{
+    display: inline-block;
+    font-size: 17px;
+    padding: 0 8px;
+}
+
+.itens-menu a{
+    text-decoration: none;
+    color: black;
+}
+
+.itens-menu li:hover{
+    font-size: 20px;
+}
+
+.itens-menu a:hover{
+    transition: .2s;
+    border-bottom: 2px solid yellow;
+}
