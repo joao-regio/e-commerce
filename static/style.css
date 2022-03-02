@@ -111,11 +111,12 @@ img{
 }
 
 footer{
-    height: 40px;
+    height: 80px;
     background-color: black;
     color: white;
     text-align: center;
 }
+
 
 footer button.voltar-inicio{
     height: 20px;
@@ -123,7 +124,7 @@ footer button.voltar-inicio{
     background-color: #aaa;
     border: none;
     border-radius: 10px;
-    margin: 15px;
+    margin-right: 15px;
     padding: 0 10px;
     cursor: pointer;
 }
@@ -131,4 +132,10 @@ footer button.voltar-inicio{
 footer span{
     font-size: 15px;
     margin: 10px 15px;
+}
+
+footer span,
+footer.voltar-inicio{
+    display: inline-block;
+    margin-top: 35px;
 }
