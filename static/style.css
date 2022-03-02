@@ -116,7 +116,7 @@ section.tipos-roupas .btn-loja li p{
 }
 
 section.mostruario{
-    background-color: #909090;
+    background-color: #858585;
     padding-bottom: 40px;
 }
 
@@ -138,7 +138,9 @@ div.item-single .camisa{
 
 div.item-single p{
     display: block;
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 17px;
+    color: #f8f8ff;
 }
 
 img{
