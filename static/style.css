@@ -6,7 +6,8 @@
 
 html, body{
     scroll-behavior: smooth;
-    background-color: black;
+    background-color: #151515;
+    font-family: 'Lato', sans-serif;
 }
 
 .center{
@@ -34,7 +35,7 @@ html, body{
 
 header{
     width: 100%;
-    background-color: black;
+    background-color: #151515;
     height: 40px;
 }
 
@@ -42,6 +43,7 @@ header .logomarca{
     margin-left: 15px;
     font-size: 30px;
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 header .logomarca a{
@@ -49,35 +51,40 @@ header .logomarca a{
     color: white;
 }
 
-.itens-menu ul{
+.links-menu-desktop ul{
     position: relative;
     list-style-type: none;
     margin: 10px;
 }
 
-.itens-menu li{
+.links-menu-desktop li{
     display: inline-block;
     font-size: 17px;
+    font-weight: 300;
     padding: 0 8px;
 }
 
-.itens-menu a{
+.links-menu-desktop a{
     text-decoration: none;
     color: white;
 }
 
-.itens-menu li:hover{
+.links-menu-desktop li:hover{
     font-size: 18.5px;
     font-weight: bold;
 }
 
-.itens-menu a:hover{
+.links-menu-desktop a:hover{
     transition: .2s;
     border-bottom: 2px solid yellow;
 }
 
+.links-menu-mobile{
+    display: none;
+}
+
 section.tipos-roupas{
-    background-color: black;
+    background-color: #151515;
     color: whitesmoke;
     height: 60px;
 }
@@ -92,6 +99,7 @@ section.tipos-roupas .btn-loja ul{
 section.tipos-roupas .btn-loja li{
     display: inline-block;
     font-size: 21px;
+    font-weight: 400;
     padding: 0 8px;
     margin-top: 10px;
 }
@@ -104,6 +112,23 @@ section.tipos-roupas .btn-loja li p:hover{
 section.mostruario{
     background-color: #aaa;
 }
+
+section.mostruario h2{
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 20px;
+    text-align: center;
+}
+
+div.itens-loja .camisa{
+    padding-top: 25px;
+}
+
+div.itenm-single p{
+    display: block;
+    font-weight: 300;
+}
+
 
 img{
     height: 280px;
@@ -131,6 +156,7 @@ footer button.voltar-inicio{
 
 footer span{
     font-size: 15px;
+    font-weight: 300;
     margin: 10px 15px;
 }
 
