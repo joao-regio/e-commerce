@@ -8,11 +8,11 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/sobre.html',(req,res)=>{
-    res.sendFile(path.join(`${__dirname}/views/contato.html`));
+    res.sendFile(path.join(`${__dirname}/views/sobre.html`));
 })
 
 app.get('/suporte.html',(req,res)=>{
-    res.sendFile(path.join(`${__dirname}/views/contato.html`));
+    res.sendFile(path.join(`${__dirname}/views/suporte.html`));
 })
 
 app.get('/carrinho.html', (req,res)=>{

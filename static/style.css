@@ -88,10 +88,10 @@ section.tipos-roupas{
     background-color: #151515;
     color: #eee;
     height: 60px;
+    width: 100%;
 }
 
 section.tipos-roupas .btn-loja ul{
-    width: 100%;
     display: flex;
     justify-content: center;
     position: relative;
