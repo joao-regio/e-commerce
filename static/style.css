@@ -35,8 +35,8 @@ html, body{
 
 header{
     width: 100%;
-    background-color: #151515;
-    height: 40px;
+    background-color: #353535;
+    height: 45px;
 }
 
 header .logomarca{
@@ -48,7 +48,7 @@ header .logomarca{
 
 header .logomarca a{
     text-decoration: none;
-    color: white;
+    color: #eee;
 }
 
 .links-menu-desktop ul{
@@ -66,7 +66,7 @@ header .logomarca a{
 
 .links-menu-desktop a{
     text-decoration: none;
-    color: white;
+    color: #fff;
 }
 
 .links-menu-desktop li:hover{
@@ -75,7 +75,8 @@ header .logomarca a{
 }
 
 .links-menu-desktop a:hover{
-    transition: .2s;
+    transition-duration: .4s;
+    transition: .4s;
     border-bottom: 2px solid yellow;
 }
 
@@ -85,11 +86,14 @@ header .logomarca a{
 
 section.tipos-roupas{
     background-color: #151515;
-    color: whitesmoke;
+    color: #eee;
     height: 60px;
 }
 
 section.tipos-roupas .btn-loja ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
     position: relative;
     list-style-type: none;
     margin: 10px;
@@ -101,44 +105,52 @@ section.tipos-roupas .btn-loja li{
     font-size: 21px;
     font-weight: 400;
     padding: 0 8px;
-    margin-top: 10px;
+    margin:  10px 50px;
 }
 
-
-section.tipos-roupas .btn-loja li p:hover{
+section.tipos-roupas .btn-loja li p{
+    display: flex;
+    justify-content: space-around;
     cursor: pointer;
+    font-weight: 400;
 }
 
 section.mostruario{
-    background-color: #aaa;
+    background-color: #909090;
+    padding-bottom: 40px;
 }
 
 section.mostruario h2{
     font-size: 30px;
     font-weight: 700;
     padding-top: 20px;
-    text-align: center;
+    color: #eee;
 }
 
-div.itens-loja .camisa{
-    padding-top: 25px;
+section.mostruario .itens-loja{
+    display: flex;
+    flex-wrap: wrap;
 }
 
-div.itenm-single p{
+div.item-single .camisa{
+    margin-top: 25px;
+}
+
+div.item-single p{
     display: block;
     font-weight: 300;
 }
 
-
 img{
     height: 280px;
-    width: 100px;
+    width: 20vw;
+    border-radius: 20px;
 }
 
 footer{
     height: 80px;
-    background-color: black;
-    color: white;
+    background-color: #151515;
+    color: #eee;
     text-align: center;
 }
 
