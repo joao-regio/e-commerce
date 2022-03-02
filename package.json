@@ -1,15 +1,23 @@
 {
-  "name": "projeto_node",
+  "name": "e-commerce",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "joao-regio",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.3"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "e-commerce feito com node e express",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joao-regio/e-commerce.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joao-regio/e-commerce/issues"
+  },
+  "homepage": "https://github.com/joao-regio/e-commerce#readme"
 }

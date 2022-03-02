@@ -9,21 +9,78 @@
     <title>Meu site</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="center">
             <div class="logomarca left"><a href="/">Logo</a></div>
             <div class="itens-menu right">
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="loja.html">Loja</a></li>
                     <li><a href="carrinho.html">Meu carrinho</a></li>
                     <li><a href="login.html">Entre na sua conta</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="suporte.html">Suporte</a></li>
                 </ul>
                 <div class="clear"></div>
             </div><!--itens-menu-->
         </div><!--center-->
-    </header>
+    </header><!--header-->
+
+    <section class="tipos-roupas">
+        <div class="center">
+            <div class="btn-loja">
+                <ul>
+                    <li class="w33"><p>Camisas</p></li>
+                    <li class="w33"><p>Moletons</p></li>
+                    <li class="w33"><p>Calças</p></li>
+                </ul>
+            </div><!--btn-loja-->
+        </div><!--center-->
+    </section><!--tipos-roupas-->
+
+    <section class="mostruario">
+        <div class="center">
+            <div class="itens-loja">
+                <img class="w33" id="camisa" src="/static/images/camisa/camisa-1.jpg">
+                <p display='block'>Camisa polo</p>
+                <p display='block'>R$59,90</p>
+                <img class="w33" id="camisa" src="/static/images/camisa/camisa-2.jpg">
+                <p display='block'>Camisa manga curta</p>
+                <p display='block'>R$69,99</p>
+                <img class="w33" id="camisa" src="/static/images/camisa/camisa-3.jpg">
+                <p display='block'>Camisa NBA</p>
+                <p display='block'>R$79,99</p>
+                <br>
+                <div></div>
+                <img class="w33" id="moletom" src="/static/images/moletom/moletom-1.jpg">
+                <p display='block'>Moletom volcom</p>
+                <p display='block'>R$89,90</p>
+                <img class="w33" id="moletom" src="/static/images/moletom/moletom-2.jpg">
+                <p display='block'>Moletom canguru</p>
+                <p display='block'>R$79,90</p>
+                <img class="w33" id="moletom" src="/static/images/moletom/moletom-3.jpg">
+                <p display='block'>Moletom adidas</p>
+                <p display='block'>R$119,90</p>
+                <br>
+                <div></div>
+                <img class="w33" id="calca" src="/static/images/calca/calca-1.jpg">
+                <p display='block'>Calça rasgada</p>
+                <p display='block'>R$99,90</p>
+                <img class="w33" id="calca" src="/static/images/calca/calca-2.jpg">
+                <p display='block'>Calça moletom</p>
+                <p display='block'>R$59,90</p>
+                <img class="w33" id="calca" src="/static/images/calca/calca-3.jpg">
+                <p display='block'>Calça esportiva</p>
+                <p display='block'>R$79,90</p>
+                <br>
+            </div><!--itens-loja-->
+        </div><!--center-->
+    </section><!--mostruario-->
+
+    <footer style="break-after: always;">
+        <button class="voltar-inicio">Voltar para o início</button><span>Todos os direitos reservados</span>
+    </footer>
+
+    <script src="/static/script.js"></script>
+
 </body>
 </html>

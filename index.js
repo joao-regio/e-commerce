@@ -11,8 +11,16 @@ app.get('/sobre.html',(req,res)=>{
     res.sendFile(path.join(`${__dirname}/views/contato.html`));
 })
 
-app.get('/contato.html',(req,res)=>{
+app.get('/suporte.html',(req,res)=>{
     res.sendFile(path.join(`${__dirname}/views/contato.html`));
+})
+
+app.get('/carrinho.html', (req,res)=>{
+    res.sendFile(path.join(`${__dirname}/views/carrinho.html`))
+})
+
+app.get('/login.html',(req,res)=>{
+    res.sendFile(path.join(`${__dirname}/views/login.html`))
 })
 
 app.use('/static',express.static('static'))
