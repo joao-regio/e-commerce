@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+p:selection{
+    background-color: #fff;
+    color: #000;
+}
+
 html, body{
     scroll-behavior: smooth;
     background-color: #151515;
@@ -132,6 +137,10 @@ section.mostruario .itens-loja{
     flex-wrap: wrap;
 }
 
+.item-single{
+    padding: 10px;
+}
+
 div.item-single .camisa{
     margin-top: 25px;
 }
@@ -141,12 +150,24 @@ div.item-single p{
     font-weight: 400;
     font-size: 17px;
     color: #f8f8ff;
+    text-align: center;
 }
 
-img{
-    height: 280px;
-    width: 20vw;
+div.item-single img{
+    height: 300px;
+    width: 25vw;
     border-radius: 20px;
+    text-align: center;
+}
+
+div.item-single a{
+    text-decoration: none;
+}
+
+div.item-single a > img:hover{
+    width: 26vw;
+    height: 315px;
+    cursor: pointer;
 }
 
 footer{

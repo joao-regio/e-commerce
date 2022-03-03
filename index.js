@@ -23,6 +23,10 @@ app.get('/login.html',(req,res)=>{
     res.sendFile(path.join(`${__dirname}/views/login.html`))
 })
 
+app.get('/compra.html', (req,res)=>{
+    res.sendFile(path.join(`${__dirname}/views/compra.html`))
+})
+
 app.use('/static',express.static('static'))
 
 app.listen(port,()=>{
