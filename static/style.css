@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-p:selection{
-    background-color: #fff;
-    color: #000;
-}
-
 html, body{
     scroll-behavior: smooth;
     background-color: #151515;
@@ -16,7 +11,7 @@ html, body{
 }
 
 .center{
-    max-width: 1200px;
+    max-width: 1150px;
     padding: 0 2%;
     margin: 0 auto;
 }
@@ -38,10 +33,14 @@ html, body{
     clear: both;
 }
 
+a{
+    text-decoration: none;
+}
+
 header{
-    width: 100%;
     background-color: #353535;
-    height: 45px;
+    padding: 10px 2%;
+    height: 65px;
 }
 
 header .logomarca{
@@ -54,6 +53,10 @@ header .logomarca{
 header .logomarca a{
     text-decoration: none;
     color: #eee;
+}
+
+.links-menu-desktop{
+    text-align: right;
 }
 
 .links-menu-desktop ul{
@@ -89,6 +92,14 @@ header .logomarca a{
     display: none;
 }
 
+
+.btn-menu-mobile img{
+    width: 37px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
 section.tipos-roupas{
     background-color: #151515;
     color: #eee;
@@ -122,13 +133,14 @@ section.tipos-roupas .btn-loja li p{
 
 section.mostruario{
     background-color: #858585;
-    padding-bottom: 40px;
+    padding: 40px 0;
+    width: 100%;
 }
 
-section.mostruario h2{
+section.mostruario span{
     font-size: 30px;
     font-weight: 700;
-    padding-top: 20px;
+    padding-top: 10px;
     color: #eee;
 }
 
@@ -137,13 +149,10 @@ section.mostruario .itens-loja{
     flex-wrap: wrap;
 }
 
-.item-single{
+div.item-single{
     padding: 10px;
 }
 
-div.item-single .camisa{
-    margin-top: 25px;
-}
 
 div.item-single p{
     display: block;
@@ -153,9 +162,9 @@ div.item-single p{
     text-align: center;
 }
 
-div.item-single img{
+div.item-single a > img{
     height: 300px;
-    width: 25vw;
+    width: 22vw;
     border-radius: 20px;
     text-align: center;
 }
@@ -165,7 +174,13 @@ div.item-single a{
 }
 
 div.item-single a > img:hover{
-    width: 26vw;
+    width: 23vw;
+    height: 330px;
+    cursor: pointer;
+}
+
+div.item-single a > img.calca:hover{
+    width: 23vw;
     height: 315px;
     cursor: pointer;
 }
@@ -173,30 +188,92 @@ div.item-single a > img:hover{
 footer{
     height: 80px;
     background-color: #151515;
-    color: #eee;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 
 footer button.voltar-inicio{
-    height: 20px;
-    height: 20px;
+    height: 28px;
     background-color: #aaa;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-right: 15px;
     padding: 0 10px;
     cursor: pointer;
+    text-align: left;
+}
+
+footer button.voltar-inicio > a{
+    color: #444;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px;
 }
 
 footer span{
     font-size: 15px;
     font-weight: 300;
-    margin: 10px 15px;
+    margin: 10px 8px;
+    color: #eee;
 }
 
 footer span,
 footer.voltar-inicio{
     display: inline-block;
     margin-top: 35px;
+}
+
+@media screen and (max-width: 800px){
+    .links-menu-desktop{
+        display: none;
+    }
+
+    .links-menu-mobile{
+        display: block;
+    }
+
+    .btn-menu-mobile img{
+        display: block;
+    }
+
+    .links-menu-mobile ul{
+        display: block;
+        list-style-type: none;
+        position: absolute;
+        width: 100%;
+        top: 50px;
+        right: 0;
+        background-color: #222;
+        transition: .6s;
+        z-index: 1000;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    .links-menu-mobile ul li{
+        border-bottom: 2px solid #ddd;
+        text-align: center;
+        padding: 8px 2%;
+    }
+
+    .links-menu-mobile ul li:hover{
+        background-color: #eee;
+        color: #111;
+    }
+
+    .links-menu-mobile ul li a{
+        color: #ddd;
+        font-size: 17px;
+        font-weight: 300;
+        padding: 1rem;
+        margin: 0 1rem;
+    }
+
+    #nav.active ul{
+        height: calc(25vh - 50px);
+        visibility: visible;
+        overflow-y: auto;
+    }
 }
