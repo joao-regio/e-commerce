@@ -69,6 +69,7 @@ header .logomarca a{
     display: inline-block;
     font-size: 17px;
     font-weight: 300;
+    letter-spacing: .7px;
     padding: 0 8px;
 }
 
@@ -78,12 +79,12 @@ header .logomarca a{
 }
 
 .links-menu-desktop li:hover{
+    transform: .2s;
     font-size: 18.5px;
     font-weight: bold;
 }
 
 .links-menu-desktop a:hover{
-    transition-duration: .4s;
     transition: .4s;
     border-bottom: 2px solid yellow;
 }
@@ -91,7 +92,6 @@ header .logomarca a{
 .links-menu-mobile{
     display: none;
 }
-
 
 .btn-menu-mobile img{
     width: 37px;
@@ -133,7 +133,7 @@ section.tipos-roupas .btn-loja li p{
 
 section.mostruario{
     background-color: #858585;
-    padding: 40px 0;
+    padding: 20px 0;
     width: 100%;
 }
 
@@ -145,28 +145,21 @@ section.mostruario span{
 }
 
 section.mostruario .itens-loja{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 12px;
 }
 
 div.item-single{
-    padding: 10px;
-}
-
-
-div.item-single p{
-    display: block;
-    font-weight: 400;
-    font-size: 17px;
-    color: #f8f8ff;
-    text-align: center;
+    align-content: center;
+    justify-content: center;
 }
 
 div.item-single a > img{
     height: 300px;
     width: 22vw;
     border-radius: 20px;
-    text-align: center;
+    margin-left: 35px;
 }
 
 div.item-single a{
@@ -174,16 +167,19 @@ div.item-single a{
 }
 
 div.item-single a > img:hover{
+    transition: .3s;
     width: 23vw;
-    height: 330px;
+    height: 320px;
     cursor: pointer;
 }
 
-div.item-single a > img.calca:hover{
-    width: 23vw;
-    height: 315px;
-    cursor: pointer;
+div.item-single p{
+    font-weight: 300;
+    font-size: 18px;
+    color: #f8f8f8;
+    margin: 5px 0 5px 90px;
 }
+
 
 footer{
     height: 80px;
@@ -224,6 +220,7 @@ footer.voltar-inicio{
     margin-top: 35px;
 }
 
+/*  MENU MOBILE  */
 @media screen and (max-width: 800px){
     .links-menu-desktop{
         display: none;
@@ -256,25 +253,81 @@ footer.voltar-inicio{
         border-bottom: 2px solid #ddd;
         text-align: center;
         padding: 8px 2%;
-    }
-
-    .links-menu-mobile ul li:hover{
-        background-color: #eee;
-        color: #111;
+        cursor: pointer;
     }
 
     .links-menu-mobile ul li a{
         color: #ddd;
-        font-size: 17px;
+        font-size: 19px;
         font-weight: 300;
-        padding: 1rem;
-        margin: 0 1rem;
+        margin: 2rem;
+        padding: 3rem;
     }
 
     #nav.active ul{
-        height: calc(25vh - 50px);
+        height: calc(60vh - 50px);
         visibility: visible;
         overflow-y: auto;
+    }
+
+}
+
+@media screen and (max-width: 710px){
+
+    section.mostruario .itens-loja{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 12px;
+    }
+
+    div.item-single a > img{
+        width: 40vw;
+        border-radius: 20px;
+    }
+
+    div.item-single a > img:hover{
+        width: 40vw;
+        height: 300px;
+        cursor: pointer;
+    }
+
+    div.item-single p{
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width:  560px){
+
+    section.mostruario > span{
+        text-align: center;
+    }
+
+    section.mostruario .itens-loja{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 12px;
+    }
+
+    div.item-single{
+        margin-bottom: 20px;
+    }
+
+    div.item-single a > img{
+        width: 87vw;
+        height: 320px;
+        border-radius: 20px;
+        place-items: center;
+    }
+
+    div.item-single a > img:hover{
+        width: 87vw;
+        height: 320px;
+        cursor: pointer;
+    }
+
+    div.item-single p{
+        text-align: center;
     }
 
 }
