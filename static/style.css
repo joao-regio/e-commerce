@@ -109,7 +109,7 @@ section.tipos-roupas{
 
 section.tipos-roupas .btn-loja ul{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     position: relative;
     list-style-type: none;
     margin: 10px;
@@ -121,7 +121,7 @@ section.tipos-roupas .btn-loja li{
     font-size: 21px;
     font-weight: 400;
     padding: 0 8px;
-    margin:  10px 50px;
+    margin:  10px;
 }
 
 section.tipos-roupas .btn-loja li p{
@@ -239,6 +239,7 @@ footer.voltar-inicio{
         list-style-type: none;
         position: absolute;
         width: 100%;
+        max-width: 640px;
         top: 50px;
         right: 0;
         background-color: #222;
@@ -249,7 +250,7 @@ footer.voltar-inicio{
         overflow-y: hidden;
     }
 
-    .links-menu-mobile ul li{
+    .links-menu-mobile > ul > li{
         border-bottom: 2px solid #ddd;
         text-align: center;
         padding: 8px 2%;
@@ -260,6 +261,7 @@ footer.voltar-inicio{
         color: #ddd;
         font-size: 19px;
         font-weight: 300;
+        letter-spacing: .6px;
         margin: 2rem;
         padding: 3rem;
     }
@@ -272,7 +274,7 @@ footer.voltar-inicio{
 
 }
 
-@media screen and (max-width: 710px){
+@media screen and (max-width: 730px){
 
     section.mostruario .itens-loja{
     display: grid;
@@ -297,10 +299,22 @@ footer.voltar-inicio{
 
 }
 
-@media screen and (max-width:  560px){
+@media screen and (max-width:  640px){
+
+    section.tipos-roupas > .btn-loja{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 640px;
+    }
+
+    section.tipos-roupas > .btn-loja > ul > li{
+        font-size: 17px;
+
+    }
 
     section.mostruario > span{
-        text-align: center;
+        justify-content: center;
     }
 
     section.mostruario .itens-loja{
@@ -314,15 +328,15 @@ footer.voltar-inicio{
     }
 
     div.item-single a > img{
-        width: 87vw;
-        height: 320px;
+        width: 74vw;
+        height: 325px;
         border-radius: 20px;
         place-items: center;
     }
 
     div.item-single a > img:hover{
-        width: 87vw;
-        height: 320px;
+        width: 74vw;
+        height: 325px;
         cursor: pointer;
     }
 
@@ -330,4 +344,17 @@ footer.voltar-inicio{
         text-align: center;
     }
 
+}
+
+@media screen and (max-width: 440px){
+    section.tipos-roupas{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    section.tipos-roupas > .btn-loja > ul > li > p{
+        font-size: 15px;
+    }
 }
