@@ -24,11 +24,6 @@ html, body{
     float: right;
 }
 
-.w33{
-    width: 33%;
-    padding: 0 10px;
-}
-
 .clear{
     clear: both;
 }
@@ -79,7 +74,7 @@ header .logomarca a{
 }
 
 .links-menu-desktop li:hover{
-    transform: .2s;
+    transition: .2s;
     font-size: 18.5px;
     font-weight: bold;
 }
@@ -145,39 +140,39 @@ section.mostruario span{
 }
 
 section.mostruario .itens-loja{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
     margin-top: 12px;
 }
 
 div.item-single{
-    align-content: center;
-    justify-content: center;
+    justify-content: space-around;
+    margin: 15px;
 }
 
 div.item-single a > img{
     height: 300px;
-    width: 22vw;
+    width: 25vw;
     border-radius: 20px;
-    margin-left: 35px;
 }
-
 div.item-single a{
     text-decoration: none;
 }
 
 div.item-single a > img:hover{
-    transition: .3s;
-    width: 23vw;
+    transition: .3s ease-out;
+    width: 28vw;
     height: 320px;
     cursor: pointer;
 }
 
-div.item-single p{
+div.item-single > p{
     font-weight: 300;
     font-size: 18px;
     color: #f8f8f8;
-    margin: 5px 0 5px 90px;
+    text-align: center;
 }
 
 
@@ -318,8 +313,7 @@ footer.voltar-inicio{
     }
 
     section.mostruario .itens-loja{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        display: flex;
         margin-top: 12px;
     }
 
@@ -328,15 +322,15 @@ footer.voltar-inicio{
     }
 
     div.item-single a > img{
-        width: 74vw;
-        height: 325px;
+        width: 80vw;
+        height: 335px;
         border-radius: 20px;
-        place-items: center;
+        text-align: center;
     }
 
     div.item-single a > img:hover{
-        width: 74vw;
-        height: 325px;
+        width: 83vw;
+        height: 345px;
         cursor: pointer;
     }
 
