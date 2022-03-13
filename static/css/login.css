@@ -1,0 +1,76 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body{
+	background-color: #0006;
+    font-family: 'Lato', sans-serif;
+}
+
+form{
+	width: 50vw;
+	height: 74vh;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	border-radius: 16px;
+	box-shadow: 0px 0px 20px 5px #444;
+}
+
+form h2{
+	text-align: center;
+	margin: 15px 0;
+}
+
+form h3{
+	margin: 26px 0 15px 0;
+	width: 35vw;
+}
+
+form input{
+	width: 35vw;
+	margin: 12px 0;
+	height: 8vh;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	outline: none;
+	font-weight: 300;
+}
+
+form input::placeholder{
+	font-size: 18px;
+	font-weight: 300;
+	color: #777;
+	padding-left: 8px;
+}
+
+form button{
+	width: 35vw;
+	height: 7vh;
+	margin: 15px;
+	background-color: black;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 400;
+	border: 0;
+	border-radius: 30px;
+	cursor: pointer;
+}
+
+form button[name=criar]{
+	background-color: white;
+	color: #000;
+	border: 1px solid #ccc;
+}
+
+.center{
+    max-width: 40vw;
+    padding: 0 2%;
+    margin: 0 auto;
+}

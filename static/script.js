@@ -25,6 +25,8 @@ menuMobile.addEventListener('click', openMenuMobile);
 menuMobile.addEventListener('touchstart', openMenuMobile);
 
 
+/*== Filtrar por categorias ==*/
+
 //camisa
 const shirt = document.querySelectorAll('.itens-loja .camisa');
 const btnShirt = document.getElementById('selecionar-camisa');
@@ -124,3 +126,14 @@ btnShirt.addEventListener('click', getShirt);
 btnSweatshirt.addEventListener('click', getSweatshirt);
 btnPants.addEventListener('click', getPants);
 btnAllItems.addEventListener('click', getAll);
+
+
+/* ==== login ==== */
+
+const btnLogin = document.querySelector('button[name=entrar');
+const username = document.querySelector('input[type=email]');
+const password = document.querySelector('input[type=password]');
+
+btnLogin.addEventListener('click', ()=>{
+	alert(username);
+})

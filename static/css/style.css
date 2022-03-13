@@ -253,7 +253,7 @@ footer.voltar-inicio{
     .links-menu-mobile > ul > li{
         border-bottom: 2px solid #ddd;
         text-align: center;
-        padding: 6px 2%;
+        padding: 7px 2%;
         cursor: pointer;
     }
 
@@ -267,7 +267,7 @@ footer.voltar-inicio{
     }
 
     #nav.active ul{
-        height: calc(42vh - 50px);
+        height: calc(41vh - 50px);
         visibility: visible;
         overflow-y: auto;
     }
