@@ -100,6 +100,7 @@ section.tipos-roupas{
     color: #eee;
     height: 60px;
     width: 100%;
+    overflow: hidden;
 }
 
 section.tipos-roupas .btn-loja ul{
@@ -216,6 +217,7 @@ footer.voltar-inicio{
 
 /*  MENU MOBILE  */
 @media screen and (max-width: 800px){
+
     .links-menu-desktop{
         display: none;
     }
@@ -233,7 +235,7 @@ footer.voltar-inicio{
         list-style-type: none;
         position: absolute;
         width: 100%;
-        max-width: 640px;
+        max-width: 800px;
         top: 50px;
         right: 0;
         background-color: #222;
@@ -244,10 +246,14 @@ footer.voltar-inicio{
         overflow-y: hidden;
     }
 
+    .links-menu-mobile ul::-webkit-scrollbar{
+        display: none;
+    }
+
     .links-menu-mobile > ul > li{
         border-bottom: 2px solid #ddd;
         text-align: center;
-        padding: 8px 2%;
+        padding: 6px 2%;
         cursor: pointer;
     }
 
@@ -261,29 +267,29 @@ footer.voltar-inicio{
     }
 
     #nav.active ul{
-        height: calc(60vh - 50px);
+        height: calc(42vh - 50px);
         visibility: visible;
         overflow-y: auto;
     }
 
 }
 
-@media screen and (max-width: 730px){
+@media screen and (max-width: 750px){
 
     section.mostruario .itens-loja{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     margin-top: 12px;
     }
 
     div.item-single a > img{
-        width: 40vw;
+        width: 26vw;
+        height: 285px;
         border-radius: 20px;
     }
 
     div.item-single a > img:hover{
-        width: 40vw;
-        height: 300px;
+        width: 26vw;
+        height: 285px;
         cursor: pointer;
     }
 
@@ -295,16 +301,19 @@ footer.voltar-inicio{
 
 @media screen and (max-width:  640px){
 
+    section.tipos-roupas{
+        height: 80px;
+    }
+
     section.tipos-roupas > .btn-loja{
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         width: 100%;
         max-width: 640px;
     }
 
     section.tipos-roupas > .btn-loja > ul > li{
-        font-size: 17px;
-
+        font-size: 14px;
     }
 
     section.mostruario > span{
@@ -312,7 +321,8 @@ footer.voltar-inicio{
     }
 
     section.mostruario .itens-loja{
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         margin-top: 12px;
     }
 
@@ -321,15 +331,15 @@ footer.voltar-inicio{
     }
 
     div.item-single a > img{
-        width: 80vw;
-        height: 335px;
+        width: 27vw;
+        height: 240px;
         border-radius: 20px;
         text-align: center;
     }
 
     div.item-single a > img:hover{
-        width: 83vw;
-        height: 345px;
+        width: 27vw;
+        height: 240px;
         cursor: pointer;
     }
 
@@ -339,15 +349,56 @@ footer.voltar-inicio{
 
 }
 
-@media screen and (max-width: 440px){
+@media screen and (max-width: 500px){
+
     section.tipos-roupas{
-        display: flex;
-        justify-content: center;
         width: 100%;
-        max-width: 400px;
+        max-width: 450px;
+        height: 15vh;
     }
 
-    section.tipos-roupas > .btn-loja > ul > li > p{
-        font-size: 15px;
+    section.tipos-roupas > .btn-loja{
+        display: flex;
+        flex-direction: column !important;
     }
+
+    section.tipos-roupas > .btn-loja > ul{
+        width: 100%;
+    }
+
+    section.mostruario > .itens-loja{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    div.item-single a > img{
+        width: 25vw;
+        height: 200px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    div.item-single a > img:hover{
+        width: 25vw;
+        height: 200px;
+        cursor: pointer;
+    }
+
+}
+
+@media screen and (max-width: 380px){
+
+    .center{
+        max-width: 370px;
+    }
+
+    section.tipos-roupas{
+        height: 17vh;
+        padding: 5px 10px;
+    }
+
+    section.tipos-roupas > .btn-loja{
+        width: 100%;
+    }
+
 }

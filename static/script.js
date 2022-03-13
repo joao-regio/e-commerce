@@ -123,4 +123,4 @@ function getAll(){
 btnShirt.addEventListener('click', getShirt);
 btnSweatshirt.addEventListener('click', getSweatshirt);
 btnPants.addEventListener('click', getPants);
-btnAllItems.addEventListener('click', getAll)
+btnAllItems.addEventListener('click', getAll);
