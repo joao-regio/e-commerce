@@ -25,9 +25,6 @@ menuMobile.addEventListener('click', openMenuMobile);
 menuMobile.addEventListener('touchstart', openMenuMobile);
 
 
-//quando o usuário clicar nos botões relevantes as categorias de roupas da loja filtrar por categorias
-//então quando clicar em camisa aparecer só camisas, quando clicar em moletom aparecer só moletom e assim por diante
-
 //camisa
 const shirt = document.querySelectorAll('.itens-loja .camisa');
 const btnShirt = document.getElementById('selecionar-camisa');
@@ -40,9 +37,13 @@ const btnSweatshirt = document.getElementById('selecionar-moletom');
 const pants = document.querySelectorAll('.itens-loja .calca');
 const btnPants = document.getElementById('selecionar-calca');
 
+//todos os itens
+const btnAllItems = document.getElementById('selecionar-tudo');
 
 function getShirt(){
 	//pegar camisas e selecionar os itens com a classe camisa na loja
+	console.log('botão camisa');
+
 	sweatshirt.forEach((item, index)=>{
 		//retirar moletons
 		sweatshirt[index].style.display = 'none';
@@ -53,16 +54,17 @@ function getShirt(){
 		pants[index].style.display = 'none';
 	})
 
-	if(shirt.style.display === 'none'){
-		shirt.forEach((item, index)=>{
-			shirt[index].style.display = 'flex';
-		})
-	}
+	shirt.forEach((item,index)=>{
+		//remover camisas
+		shirt[index].style.display = 'block'
+	})
 
 }
 
 function getSweatshirt() {
 	//pegar moletons e selecionar os itens com a classe moletom na loja
+	console.log('moletom clicado');
+
 	shirt.forEach((item,index)=>{
 		//remover camisas
 		shirt[index].style.display = 'none'
@@ -73,15 +75,16 @@ function getSweatshirt() {
 		pants[index].style.display = 'none';
 	})
 
-	if(sweatshirt.style.display === 'none'){
-		sweatshirt.forEach((item, index)=>{
-			sweatshirt[index].style.display = 'flex';
-		})
-	}
+	sweatshirt.forEach((item,index)=>{
+		sweatshirt[index].style.display = 'block'
+	})
+
 }
 
 function getPants() {
 	//pegar calca e selecionar os itens com a classe calcas na loja
+	console.log('calça clicada');
+
 	shirt.forEach((item,index)=>{
 		//remover camisas
 		shirt[index].style.display = 'none'
@@ -92,14 +95,32 @@ function getPants() {
 		sweatshirt[index].style.display = 'none';
 	})
 
-	if(spants.style.display === 'none'){
-		pants.forEach((item, index)=>{
-			pants[index].style.display = 'flex';
-		})
-	}
+	pants.forEach((item, index)=>{		
+		pants[index].style.display = 'block'
+	})
+
 }
 
+function getAll(){
+	//retornar os itens removidos
+	console.log('botão todos clicado');
+
+	shirt.forEach((item,index)=>{
+		//remover camisas
+		shirt[index].style.display = 'block'
+	})
+
+	sweatshirt.forEach((item, index)=>{
+		//retirar moletons
+		sweatshirt[index].style.display = 'block';
+	})
+
+	pants.forEach((item, index)=>{		
+		pants[index].style.display = 'block'
+	})
+}
 
 btnShirt.addEventListener('click', getShirt);
 btnSweatshirt.addEventListener('click', getSweatshirt);
 btnPants.addEventListener('click', getPants);
+btnAllItems.addEventListener('click', getAll)

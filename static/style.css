@@ -142,19 +142,18 @@ section.mostruario span{
 section.mostruario .itens-loja{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
+    justify-content: space-around;
     margin-top: 12px;
 }
 
+
 div.item-single{
-    justify-content: space-around;
     margin: 15px;
 }
 
 div.item-single a > img{
     height: 300px;
-    width: 25vw;
+    width: 23vw;
     border-radius: 20px;
 }
 div.item-single a{
@@ -163,7 +162,7 @@ div.item-single a{
 
 div.item-single a > img:hover{
     transition: .3s ease-out;
-    width: 28vw;
+    width: 24vw;
     height: 320px;
     cursor: pointer;
 }
