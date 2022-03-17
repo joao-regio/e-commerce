@@ -147,7 +147,6 @@ section.mostruario .itens-loja{
     margin-top: 12px;
 }
 
-
 div.item-single{
     margin: 15px;
 }
@@ -267,7 +266,7 @@ footer.voltar-inicio{
     }
 
     #nav.active ul{
-        height: calc(41vh - 50px);
+        height: calc(43vh - 50px);
         visibility: visible;
         overflow-y: auto;
     }

@@ -7,25 +7,42 @@ app.get('/',(req,res)=>{
     res.sendFile(path.join(`${__dirname}/views/index.html`));
 })
 
-app.get('/sobre.html',(req,res)=>{
+app.get('/about',(req,res)=>{
     res.sendFile(path.join(`${__dirname}/views/sobre.html`));
 })
 
-app.get('/suporte.html',(req,res)=>{
+app.get('/support',(req,res)=>{
     res.sendFile(path.join(`${__dirname}/views/suporte.html`));
 })
 
-app.get('/carrinho.html', (req,res)=>{
+app.get('/cart', (req,res)=>{
     res.sendFile(path.join(`${__dirname}/views/carrinho.html`))
 })
 
-app.get('/login.html',(req,res)=>{
+app.get('/login',(req,res)=>{
     res.sendFile(path.join(`${__dirname}/views/login.html`))
 })
 
-app.get('/compra.html', (req,res)=>{
+app.get('/payment', (req,res)=>{
     res.sendFile(path.join(`${__dirname}/views/compra.html`))
 })
+
+app.get('/create-account', (req,res)=>{
+    res.sendFile(path.join(`${__dirname}/views/criar-conta.html`))
+})
+
+app.use(express.urlencoded({ extended: true }));
+app.post('/', (req,res)=>{
+    const emailUser = req.body.user;
+    const passwordUser = req.body.senha;
+    const nameUser = req.body.nameUser;
+    const emailCreated = req.body.emailUser;
+    const firstPassword = req.body.primeiraSenha;
+    const passwordCreated = req.body.confirmarSenha;
+
+    res.send("email criado pelo usuario: "+emailCreated)
+})
+
 
 app.use('/static',express.static('static'))
 

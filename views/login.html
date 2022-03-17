@@ -10,17 +10,17 @@
 	<title>Login Marketplace</title>
 </head>
 <body>
-	<form>
+	<form method="post" action="/">
 		<div class="center">	
 			<h2>Logomarca</h2>
 			<h3>Entrar no Marketplace</h3>		
-			<input autocomplete="off" type="email" placeholder="Seu email..." required>
+			<input autocomplete="off" name="user" type="email" placeholder="Seu email..." required>
 			<div></div>
-			<input autocomplete="off" type="password" placeholder="Sua senha..." required>
+			<input autocomplete="off" name="senha" type="password" placeholder="Sua senha..." required>
 			<div></div>
-			<button name="entrar" type="submit" formaction="index.html">Entrar</button>
+			<button name="entrar" type="submit" formaction="/">Entrar</button>
 			<div></div>
-			<button name="criar" type="submit" formaction="criar-conta.html">Criar nova conta</button>
+			<p>Não possui uma conta? <a href="/create-account"> Inscreva-se</a></p>
 		</div>
 	</form>
 

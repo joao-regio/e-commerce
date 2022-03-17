@@ -126,14 +126,3 @@ btnShirt.addEventListener('click', getShirt);
 btnSweatshirt.addEventListener('click', getSweatshirt);
 btnPants.addEventListener('click', getPants);
 btnAllItems.addEventListener('click', getAll);
-
-
-/* ==== login ==== */
-
-const btnLogin = document.querySelector('button[name=entrar');
-const username = document.querySelector('input[type=email]');
-const password = document.querySelector('input[type=password]');
-
-btnLogin.addEventListener('click', ()=>{
-	alert(username);
-})
