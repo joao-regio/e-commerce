@@ -45,7 +45,7 @@ app.route('/login')
 
     .post((req,res)=>{
         let newEmailUser = req.body.emailNewUser;
-        let newNameUser = req.body.nameUser;
+        let newNameUser = req.body.username;
         let firstPasswd = req.body.primeiraSenha;
         let confirmPasswd = req.body.confirmarSenha;
         let age = req.body.idade;

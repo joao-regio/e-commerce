@@ -166,4 +166,11 @@ label{
 		font-size: 22px;
 		font-weight: 400;
 	}
+
+	form button:hover{
+		width: 69vw;
+		height: 9vh;
+		font-size: 24px;
+		font-weight: 400;
+	}
 }
