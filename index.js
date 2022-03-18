@@ -1,11 +1,30 @@
 const express = require("express");
+const session = require("express-session");
 const app = express();
 const port = 3000;
 const path = require("path");
+const bodyParser = require("body-parser");
 
-app.get('/',(req,res)=>{
-    res.sendFile(path.join(`${__dirname}/views/index.html`));
-})
+app.use(session({ secret: "nerjtgniorjnoijn" }))
+app.use(bodyParser.urlencoded({extended:true}))
+app.engine('html', require('ejs').renderFile)
+app.set('view engine','html');
+
+app.route('/')
+    .get((req,res)=>{
+        res.sendFile(path.join(`${__dirname}/views/index.html`));
+    })
+
+    .post((req,res)=>{
+        let emailUser = req.body.emailUser;
+        let passwdUser = req.body.senha;
+
+        if(emailUser == 'admin@admin' && passwdUser == 'admin'){
+            res.redirect('/')
+        }else{
+            res.redirect('/login');
+        }
+    })
 
 app.get('/about',(req,res)=>{
     res.sendFile(path.join(`${__dirname}/views/sobre.html`));
@@ -19,9 +38,24 @@ app.get('/cart', (req,res)=>{
     res.sendFile(path.join(`${__dirname}/views/carrinho.html`))
 })
 
-app.get('/login',(req,res)=>{
-    res.sendFile(path.join(`${__dirname}/views/login.html`))
-})
+app.route('/login')
+    .get((req,res)=>{
+        res.sendFile(path.join(`${__dirname}/views/login.html`))
+    })
+
+    .post((req,res)=>{
+        let newEmailUser = req.body.emailNewUser;
+        let newNameUser = req.body.nameUser;
+        let firstPasswd = req.body.primeiraSenha;
+        let confirmPasswd = req.body.confirmarSenha;
+        let age = req.body.idade;
+
+        if(firstPasswd === confirmPasswd){
+            res.redirect('/login')
+        }else {
+            res.redirect('/create-account')
+        }
+    })
 
 app.get('/payment', (req,res)=>{
     res.sendFile(path.join(`${__dirname}/views/compra.html`))
@@ -30,19 +64,6 @@ app.get('/payment', (req,res)=>{
 app.get('/create-account', (req,res)=>{
     res.sendFile(path.join(`${__dirname}/views/criar-conta.html`))
 })
-
-app.use(express.urlencoded({ extended: true }));
-app.post('/', (req,res)=>{
-    const emailUser = req.body.user;
-    const passwordUser = req.body.senha;
-    const nameUser = req.body.nameUser;
-    const emailCreated = req.body.emailUser;
-    const firstPassword = req.body.primeiraSenha;
-    const passwordCreated = req.body.confirmarSenha;
-
-    res.send("email criado pelo usuario: "+emailCreated)
-})
-
 
 app.use('/static',express.static('static'))
 

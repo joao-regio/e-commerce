@@ -35,13 +35,16 @@ form h3{
 
 form input{
 	width: 35vw;
-	margin: 12px 0;
 	height: 8vh;
+	margin: 12px 0;
+	padding-left: 2px;
 	border-radius: 10px;
 	border: 1px solid #ccc;
 	outline: none;
 	font-weight: 300;
-	font-size: 17px;
+	font-size: 15px;
+	background-color: #f5f6f7;
+	color: #8d949e;
 }
 
 form input::placeholder{
@@ -52,15 +55,23 @@ form input::placeholder{
 }
 
 form button{
-	width: 35vw;
+	width: 30vw;
 	height: 7vh;
 	margin: 15px;
-	background-color: black;
+	background-color: #000;
 	color: #fff;
 	font-size: 20px;
 	font-weight: 400;
 	border: 0;
 	border-radius: 30px;
+}
+
+form button:hover{
+	width: 31vw;
+	height: 8vh;
+	font-size: 22px;
+	font-weight: 400;
+	background-color: rgb(25, 25, 25);
 	cursor: pointer;
 }
 
@@ -101,8 +112,8 @@ form a{
 
 	form input{
 		width: 74vw;
-		margin: 12px 0;
 		height: 9vh;
+		margin: 12px 0;
 		border-radius: 10px;
 		border: 1px solid #ccc;
 		outline: none;

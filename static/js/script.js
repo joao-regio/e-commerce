@@ -1,6 +1,10 @@
 const menuMobile = document.querySelector('.btn-menu-mobile img');
 const nav = document.querySelector('#nav');
-
+const btnShop = document.querySelector('.btn-loja');
+const btnBackInitial = document.querySelector('footer button.voltar-inicio')
+.addEventListener('click', ()=>{
+	return false;
+})
 
 function openMenuMobile(event){
 
@@ -23,7 +27,6 @@ function openMenuMobile(event){
 
 menuMobile.addEventListener('click', openMenuMobile);
 menuMobile.addEventListener('touchstart', openMenuMobile);
-
 
 /*== Filtrar por categorias ==*/
 
