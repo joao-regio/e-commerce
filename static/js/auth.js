@@ -1,3 +1,5 @@
+const emailUser = document.querySelector("input[name=emailNewUser]");
+const username = document.querySelector("input[name=username");
 const firstPasswd = document.querySelector('input[name=primeiraSenha]')
 const confirmPasswd = document.querySelector('input[name=confirmarSenha]')
 const errorPasswd = document.querySelector('.erro-senha p');
@@ -14,7 +16,18 @@ function EnterKeyFilter(){
 }
 
 btn.addEventListener("click",(e)=>{
-
+		
+	let charPasswd = confirmPasswd.split('');
+	if (charPasswd.length < 8) {
+		e.preventDefault();
+		errorPasswd.innerHTML = "";
+		errorPasswd.innerHTML += "Senha tem que conter no mínimo 8 caracteres";
+		firstPasswd.classList.add('erro');
+	}else{
+		errorPasswd.innerHTML = "";
+		firstPasswd.classList.remove('erro');
+		confirmPasswd.classList.remove('erro');
+	}
 
 	if (firstPasswd.value != confirmPasswd.value || firstPasswd.value === "" || confirmPasswd.value === ""){
 		e.preventDefault();
@@ -37,5 +50,7 @@ btn.addEventListener("click",(e)=>{
 		errorAge.innerHTML = "";
 		age.classList.remove('erro')
 	}
+
+	email.toLowerCase;
 
 })
