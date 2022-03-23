@@ -25,5 +25,6 @@
     "url": "https://github.com/joao-regio/e-commerce/issues"
   },
   "homepage": "https://github.com/joao-regio/e-commerce#readme",
-  "keywords": []
+  "keywords": [],
+  "devDependencies": {}
 }

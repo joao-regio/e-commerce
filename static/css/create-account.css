@@ -54,6 +54,10 @@ form > input::placeholder{
 	padding-left: 10px;
 }
 
+form > input[name=emailNewUser]{
+	text-transform: lowercase;
+}
+
 div.erro-senha p{
 	margin-top: -4px;
 	color: #E81111;
@@ -117,6 +121,14 @@ form a{
 	color: #389f9f;
 }
 
+form img{
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	position: absolute;
+	margin: 19px -40px;
+}
+
 .center{
     max-width: 40vw;
     padding: 0 2%;
@@ -157,6 +169,13 @@ label{
 		outline: none;
 		font-weight: 300;
 		font-size: 15px;
+	}
+
+	form img{
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+		margin-bottom: 52px;
 	}
 
 	form button{

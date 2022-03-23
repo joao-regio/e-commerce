@@ -36,13 +36,13 @@ form h3{
 form input{
 	width: 35vw;
 	height: 8vh;
-	margin: 12px 0;
+	margin: 12px 0px;
 	padding-left: 10px;
 	border-radius: 10px;
 	border: 1px solid #ccc;
 	outline: none;
 	font-weight: 300;
-	font-size: 15px;
+	font-size: 16px;
 	background-color: #f5f6f7;
 	color: #8d949e;
 }
@@ -51,7 +51,7 @@ form input::placeholder{
 	font-size: 17px;
 	font-weight: 300;
 	color: #555;
-	padding-left: 10px;
+	padding-left: 2px;
 }
 
 form button{

@@ -10,29 +10,22 @@ const age = document.querySelector('input[name=idade]');
 function EnterKeyFilter(){  
   if (window.event.keyCode == 13)
   {   
-      event.returnValue=false;
+      event.returnValue = false;
       event.cancel = true;
   }
 }
 
+//se as validaçoes não der certo não enviar dados ao banco de dados
+
+
 btn.addEventListener("click",(e)=>{
 		
 	let charPasswd = confirmPasswd.split('');
-	if (charPasswd.length < 8) {
-		e.preventDefault();
-		errorPasswd.innerHTML = "";
-		errorPasswd.innerHTML += "Senha tem que conter no mínimo 8 caracteres";
-		firstPasswd.classList.add('erro');
-	}else{
-		errorPasswd.innerHTML = "";
-		firstPasswd.classList.remove('erro');
-		confirmPasswd.classList.remove('erro');
-	}
+	
 
-	if (firstPasswd.value != confirmPasswd.value || firstPasswd.value === "" || confirmPasswd.value === ""){
-		e.preventDefault();
+	if (firstPasswd.value != confirmPasswd.value || firstPasswd.value === "" || confirmPasswd.value === "" && charPasswd.length < 8){
 		errorPasswd.innerHTML = "";
-		errorPasswd.innerHTML += "As senhas são incompatíveis";
+		errorPasswd.innerHTML += "As senhas são incompatíveis ou é pequena";
 		firstPasswd.classList.add('erro');
 		confirmPasswd.classList.add('erro');
 	}else{
@@ -42,7 +35,6 @@ btn.addEventListener("click",(e)=>{
 	}
 
 	if (age.value < 14) {
-		e.preventDefault();
 		errorAge.innerHTML = "";
 		errorAge.innerHTML += "A idade tem que maior que 14";
 		age.classList.add('erro')
@@ -50,7 +42,5 @@ btn.addEventListener("click",(e)=>{
 		errorAge.innerHTML = "";
 		age.classList.remove('erro')
 	}
-
-	email.toLowerCase;
 
 })

@@ -16,15 +16,50 @@
 			<input autocomplete="off" type="email" name="emailNewUser" placeholder="Seu email..." required>
 			<input autocomplete="off" type="text" name="username" placeholder="Seu nome completo..." required>
 			<input autocomplete="off" type="password" name="primeiraSenha" placeholder="Sua senha..." required>
+			<img name="show-first-password" src="/static/images/icons/olho-aberto.png" />
 			<input autocomplete="off" type="password" name="confirmarSenha" placeholder="Confirme sua senha..." required>
+			<img name="show-second-password" src="/static/images/icons/olho-aberto.png" />
 			<div class="erro-senha"><p></p></div>
 			<label for="idade">Idade</label>
 			<input type="number" name="idade" placeholder="Sua idade..." required>
 			<div class="erro-idade"><p></p></div>
-			<button type="submit" name="criarConta">Criar conta</button>
+			<button type="submit" name="criarConta" onsubmit="return false">Criar conta</button>
 			<p>Já tem uma conta? <a href="/login">Inscreva-se</a></p>
 		</div>
 	</form>
 	<script src="/static/js/auth.js"></script>
+	<script>
+		const img = document.querySelector("img");
+		const showFirstPasswd = document.querySelector('img[name=show-first-password');
+		const firstPasswdInput = document.querySelector('input[name=primeiraSenha');
+		const secondPasswdInput = document.querySelector('input[name=confirmarSenha');
+		const showSecondPasswd = document.querySelector('img[name=show-second-password');
+
+		showFirstPasswd.addEventListener('click', ()=>{	
+			img.classList.toggle('show');
+			if(img.classList.contains('show')){
+				//mudar input para texto
+				showFirstPasswd.src = "/static/images/icons/olho-fechado.png";
+				firstPasswdInput.type = "text";
+			}else{
+				//mudar input para password
+				showFirstPasswd.src = "/static/images/icons/olho-aberto.png";
+				firstPasswdInput.type = "password";
+			}
+		})
+
+		showSecondPasswd.addEventListener('click',()=>{
+			img.classList.toggle('show');
+			if(img.classList.contains('show')){
+				//mudar input para texto
+				showSecondPasswd.src = "/static/images/icons/olho-fechado.png";
+				secondPasswdInput.type = "text";
+			}else{
+				//mudar input para password
+				showSecondPasswd.src = "/static/images/icons/olho-aberto.png";
+				secondPasswdInput.type = "password";
+			}
+		})
+	</script>
 </body>
 </html>

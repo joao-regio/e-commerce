@@ -1,6 +1,4 @@
 const express = require("express");
-const session = require("express-session");
-const validator = require("express-validator");
 const app = express();
 const port = 3000;
 const path = require("path");
@@ -44,11 +42,9 @@ let loginSchema = new Schema({
     }
 });
 
-// Compile model from schema
 let loginModel = mongoose.model('users', loginSchema );
 
 
-app.use(session({ secret: "nerjtgniorjnoijn" }))
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json());
 app.engine('html', require('ejs').renderFile)
