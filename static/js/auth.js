@@ -1,3 +1,4 @@
+const form = document.getElementById('form');
 const emailUser = document.querySelector("input[name=emailNewUser]");
 const username = document.querySelector("input[name=username");
 const firstPasswd = document.querySelector('input[name=primeiraSenha]')
@@ -19,15 +20,15 @@ function EnterKeyFilter(){
 
 
 btn.addEventListener("click",(e)=>{
-		
-	let charPasswd = confirmPasswd.split('');
-	
 
-	if (firstPasswd.value != confirmPasswd.value || firstPasswd.value === "" || confirmPasswd.value === "" && charPasswd.length < 8){
+	if (firstPasswd.value != confirmPasswd.value || firstPasswd.value === "" || confirmPasswd.value === ""){
+		e.preventDefault();
 		errorPasswd.innerHTML = "";
-		errorPasswd.innerHTML += "As senhas são incompatíveis ou é pequena";
+		errorPasswd.innerHTML += "As senhas são incompatíveis";
 		firstPasswd.classList.add('erro');
 		confirmPasswd.classList.add('erro');
+		firstPasswd.value = "";
+		confirmPasswd.value = "";
 	}else{
 		errorPasswd.innerHTML = "";
 		firstPasswd.classList.remove('erro');
@@ -35,9 +36,11 @@ btn.addEventListener("click",(e)=>{
 	}
 
 	if (age.value < 14) {
+		e.preventDefault();
 		errorAge.innerHTML = "";
-		errorAge.innerHTML += "A idade tem que maior que 14";
+		errorAge.innerHTML += "A idade tem que ser maior que 14";
 		age.classList.add('erro')
+		age.value = "";
 	}else{
 		errorAge.innerHTML = "";
 		age.classList.remove('erro')

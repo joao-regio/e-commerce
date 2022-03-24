@@ -10,18 +10,19 @@
 	<title>Crie sua conta</title>
 </head>
 <body>
-	<form action="/login" method="post" onkeydown="EnterKeyFilter()">
+	<form action="/login" method="post" onkeydown="EnterKeyFilter()" id="form">
 		<div class="center">
 			<h2>Crie uma nova conta</h2>
 			<input autocomplete="off" type="email" name="emailNewUser" placeholder="Seu email..." required>
 			<input autocomplete="off" type="text" name="username" placeholder="Seu nome completo..." required>
-			<input autocomplete="off" type="password" name="primeiraSenha" placeholder="Sua senha..." required>
+			<input autocomplete="off" type="password" maxlength="20" minlength="8" name="primeiraSenha" placeholder="Sua senha..." required>
 			<img name="show-first-password" src="/static/images/icons/olho-aberto.png" />
-			<input autocomplete="off" type="password" name="confirmarSenha" placeholder="Confirme sua senha..." required>
+			<p class="informar-caractere">A senha tem que conter no minímo 8 caracteres e no máximo 20 caracteres</p>
+			<input autocomplete="off" type="password" maxlength="20" minlength="8" name="confirmarSenha" placeholder="Confirme sua senha..." required>
 			<img name="show-second-password" src="/static/images/icons/olho-aberto.png" />
 			<div class="erro-senha"><p></p></div>
 			<label for="idade">Idade</label>
-			<input type="number" name="idade" placeholder="Sua idade..." required>
+			<input type="number" name="idade" min="0" max="300" placeholder="Sua idade..." required>
 			<div class="erro-idade"><p></p></div>
 			<button type="submit" name="criarConta" onsubmit="return false">Criar conta</button>
 			<p>Já tem uma conta? <a href="/login">Inscreva-se</a></p>

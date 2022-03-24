@@ -108,6 +108,14 @@ form button:hover{
 	cursor: pointer;
 }
 
+form p.informar-caractere{
+	font-weight: 300;
+	font-size: 14px;
+	padding: 4px 0 6px 0;
+	color: #666;
+	margin-top: 0;
+}
+
 form p{
 	color: #444;
 	font-size: 16px;
@@ -117,7 +125,6 @@ form p{
 
 form a{
 	text-decoration: none;
-	padding-left: 2px;
 	color: #389f9f;
 }
 
@@ -126,11 +133,11 @@ form img{
 	height: 30px;
 	cursor: pointer;
 	position: absolute;
-	margin: 19px -40px;
+	margin: 16px -40px;
 }
 
 .center{
-    max-width: 40vw;
+    max-width: 41vw;
     padding: 0 2%;
     margin: 0 auto;
 }
@@ -149,6 +156,7 @@ label{
 		max-width: 768px;
 		height: 100%;
 		border-radius: 0;
+		box-shadow: 0 0 0 0 none;
 	}
 
 	form h3{
@@ -176,6 +184,7 @@ label{
 		height: 30px;
 		cursor: pointer;
 		margin-bottom: 52px;
+		z-index: 1000;
 	}
 
 	form button{
