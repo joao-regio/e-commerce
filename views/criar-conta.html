@@ -30,15 +30,14 @@
 	</form>
 	<script src="/static/js/auth.js"></script>
 	<script>
-		const img = document.querySelector("img");
-		const showFirstPasswd = document.querySelector('img[name=show-first-password');
-		const firstPasswdInput = document.querySelector('input[name=primeiraSenha');
-		const secondPasswdInput = document.querySelector('input[name=confirmarSenha');
-		const showSecondPasswd = document.querySelector('img[name=show-second-password');
+		const showFirstPasswd = document.querySelector('img[name=show-first-password]');
+		const firstPasswdInput = document.querySelector('input[name=primeiraSenha]');
+		const secondPasswdInput = document.querySelector('input[name=confirmarSenha]');
+		const showSecondPasswd = document.querySelector('img[name=show-second-password]');
 
 		showFirstPasswd.addEventListener('click', ()=>{	
-			img.classList.toggle('show');
-			if(img.classList.contains('show')){
+			showFirstPasswd.classList.toggle('show');
+			if(showFirstPasswd.classList.contains('show')){
 				//mudar input para texto
 				showFirstPasswd.src = "/static/images/icons/olho-fechado.png";
 				firstPasswdInput.type = "text";
@@ -50,8 +49,8 @@
 		})
 
 		showSecondPasswd.addEventListener('click',()=>{
-			img.classList.toggle('show');
-			if(img.classList.contains('show')){
+			showSecondPasswd.classList.toggle('show');
+			if(showSecondPasswd.classList.contains('show')){
 				//mudar input para texto
 				showSecondPasswd.src = "/static/images/icons/olho-fechado.png";
 				secondPasswdInput.type = "text";

@@ -44,7 +44,7 @@ form input{
 	font-weight: 300;
 	font-size: 16px;
 	background-color: #f5f6f7;
-	color: #8d949e;
+	color: #444;
 }
 
 form input::placeholder{
@@ -52,6 +52,14 @@ form input::placeholder{
 	font-weight: 300;
 	color: #555;
 	padding-left: 2px;
+}
+
+form img{
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	position: absolute;
+	margin: 22px -40px;
 }
 
 form button{

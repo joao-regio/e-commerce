@@ -60,7 +60,7 @@ app.route('/')
         let emailUser = req.body.emailUser;
         let passwdUser = req.body.senha;
 
-        if(emailUser == 'admin@admin' && passwdUser == 'admin'){
+        if(emailUser == 'admin@admin' && passwdUser == 'administrador'){
             res.redirect('/')
         }else{
             res.redirect('/login');

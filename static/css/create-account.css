@@ -151,12 +151,18 @@ label{
 
 
 @media screen and (max-width: 768px){
+
+	html, body{
+		background-color: #fff;
+		width: 100%;
+	}
+
 	form{
 		width: 100%;
 		max-width: 768px;
 		height: 100%;
 		border-radius: 0;
-		box-shadow: 0 0 0 0 none;
+		box-shadow: none;
 	}
 
 	form h3{
@@ -168,23 +174,23 @@ label{
 	}
 
 	form input{
-		width: 74vw;
+		width: 70vw;
 		height: 9vh;
 		margin: 12px 0;
 		padding-left: 2px;
-		border-radius: 10px;
-		border: 1px solid #ccc;
-		outline: none;
+		outline: #38ff;
 		font-weight: 300;
 		font-size: 15px;
 	}
+	
+	form img[name=show-first-password]{
+		top: 232px;
+		right: 181px;
+	}
 
-	form img{
-		width: 30px;
-		height: 30px;
-		cursor: pointer;
-		margin-bottom: 52px;
-		z-index: 1000;
+	form img[name=show-second-password]{
+		bottom: 229px;
+		right: 181px;
 	}
 
 	form button{
@@ -200,5 +206,27 @@ label{
 		height: 9vh;
 		font-size: 24px;
 		font-weight: 400;
+	}
+}
+
+@media screen and (max-width: 600px){
+	form img[name=show-first-password]{
+		right: 100px;
+	}
+
+	form img[name=show-second-password]{
+		right: 100px;
+	}
+}
+
+@media screen and (max-width: 350px){
+	form img[name=show-first-password]{
+		top: 261px;
+		right: 76px;
+	}
+
+	form img[name=show-second-password]{
+		bottom: 166px;
+		right: 81px;
 	}
 }
