@@ -35,20 +35,20 @@ form h3{
 
 form input{
 	width: 35vw;
-	height: 8vh;
+	height: 6.5vh;
 	margin: 8px 0;
 	padding-left: 10px;
 	border-radius: 10px;
 	border: 1px solid #ccc;
 	outline-color: #38ff;
 	font-weight: 300;
-	font-size: 17px;
+	font-size: 15px;
 	background-color: #f5f6f7;
 	color: #000;
 }
 
 form > input::placeholder{
-	font-size: 17px;
+	font-size: 15px;
 	font-weight: 300;
 	color: ##8d949e;
 	padding-left: 10px;
@@ -59,7 +59,7 @@ form > input[name=emailNewUser]{
 }
 
 div.erro-senha p{
-	margin-top: -4px;
+	margin-top: 10px;
 	color: #E81111;
 }
 
@@ -68,7 +68,6 @@ div.erro-senha p{
 }
 
 div.erro-idade p{
-	margin-top: -4px;
 	color: #E81111;
 }
 

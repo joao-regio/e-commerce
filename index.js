@@ -25,25 +25,34 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 let loginSchema = new Schema({
     email: {
         type: String,
-        unique: true,
-        require: true
+        unique: [true, 'email já existente'],
+        required: true,
+        lowercase: true
     },
     name: {
         type: String,
-        require: true
+        required: true
     },
     password: {
         type: String,
-        require: true
+        required: true,
+        min: 8,
+        max: 20
     },
-    age:{
+    age: {
         type: Number,
-        require: true
+        required: true,
+        min: 0,
+        max: 175
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+        required: true
     }
 });
 
 let loginModel = mongoose.model('users', loginSchema );
-
 
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json());
@@ -97,20 +106,33 @@ app.route('/login')
             res.redirect('/create-account');
         }
 
+        const createUser = new loginModel;
+
         async function insertUser(){
-            await loginModel.create({
-                email: newEmailUser,
-                name: username,
-                password: confirmPasswd,
-                age: age,
-                },
-                (err)=>{
-                    if(err) throw err;
-                    console.log("registrado!")
-            })
+
+            try {
+                await loginModel.create({
+                    email: newEmailUser,
+                    name: username,
+                    password: confirmPasswd,
+                    age: age,
+                    created_at: createUser.createdAt,
+                    },console.log('registrado!'));
+            }catch(error) {
+                const messageError = error.message;
+                console.log(messageError);
+                if(messageError.substr(0,6) === 'E11000'){
+                    //informar usuário que o email já existe
+
+
+                    console.log('email já existente');
+                }
+            }
+
         }
 
         insertUser();
+        console.log(loginSchema.path('email'));
         console.log("Email: "+newEmailUser+" Nome: "+username+" Senha: "+confirmPasswd+" Idade: "+age)
     })
 

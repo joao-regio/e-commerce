@@ -16,8 +16,6 @@ function EnterKeyFilter(){
   }
 }
 
-//se as validaçoes não der certo não enviar dados ao banco de dados
-
 
 btn.addEventListener("click",(e)=>{
 
@@ -34,6 +32,7 @@ btn.addEventListener("click",(e)=>{
 		firstPasswd.classList.remove('erro');
 		confirmPasswd.classList.remove('erro');
 	}
+
 
 	if (age.value < 14) {
 		e.preventDefault();
