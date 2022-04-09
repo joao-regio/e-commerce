@@ -4,7 +4,8 @@ const port = 3000;
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
-const mongoDB = "mongodb://localhost:27017/login"
+const { check, validationResult } = require("express-validator");
+const mongoDB = "mongodb://localhost:27017/login";
 const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
@@ -21,17 +22,26 @@ const db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 let loginSchema = new Schema({
     email: {
         type: String,
-        unique: [true, 'email já existente'],
+        unique: true,
         required: true,
-        lowercase: true
+        lowercase: true,
     },
     name: {
         type: String,
-        required: true
+        required: true,
+        min: 3,
+        max: 30
+    },
+    lastname: {
+        type: String,
+        required: true,
+        min: 3,
+        max: 20
     },
     password: {
         type: String,
@@ -54,7 +64,6 @@ let loginSchema = new Schema({
 
 let loginModel = mongoose.model('users', loginSchema );
 
-app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json());
 app.engine('html', require('ejs').renderFile)
 app.set('view engine','html');
@@ -94,16 +103,40 @@ app.route('/login')
     })
 
     .post((req,res)=>{
-        let newEmailUser = req.body.emailNewUser;
+        res.json(req.body)
+    })
+
+
+app.get('/payment', (req,res)=>{
+    res.sendFile(path.join(`${__dirname}/views/compra.html`))
+})
+
+app.route('/create-account')
+    .get((req,res)=>{
+        res.sendFile(path.join(`${__dirname}/views/criar-conta.html`))
+    })
+
+    .post(urlencodedParser,[
+        check('username','seu usuário deve ter mais de 3 caracteres')
+            .exists()
+            .isLength({ min: 3 }),
+        check('newEmailUser','email não é válido')
+            .isEmail()
+            .normalizeEmail()
+            .isLength({ min: 5})
+        ], (req,res) =>{
+
+        let newEmailUser = req.body.newEmailUser;
         let username = req.body.username;
+        let lastname = req.body.lastname;
         let firstPasswd = req.body.primeiraSenha;
         let confirmPasswd = req.body.confirmarSenha;
         let age = req.body.idade;
 
         if(firstPasswd === confirmPasswd){
-            res.redirect('/login')
+            console.log('As senhas são compatíveis');
         }else {
-            res.redirect('/create-account');
+            console.log('As senhas não são compatíveis');
         }
 
         const createUser = new loginModel;
@@ -111,19 +144,25 @@ app.route('/login')
         async function insertUser(){
 
             try {
+
                 await loginModel.create({
                     email: newEmailUser,
                     name: username,
+                    lastname: lastname,
                     password: confirmPasswd,
                     age: age,
                     created_at: createUser.createdAt,
-                    },console.log('registrado!'));
+                });
+
+
+                console.log('registrado!')
             }catch(error) {
+
                 const messageError = error.message;
                 console.log(messageError);
                 if(messageError.substr(0,6) === 'E11000'){
                     //informar usuário que o email já existe
-
+                    
 
                     console.log('email já existente');
                 }
@@ -133,17 +172,8 @@ app.route('/login')
 
         insertUser();
         console.log(loginSchema.path('email'));
-        console.log("Email: "+newEmailUser+" Nome: "+username+" Senha: "+confirmPasswd+" Idade: "+age)
+        console.log("Email: "+newEmailUser+" Nome: "+username+" Sobrenome: "+lastname+" Senha: "+confirmPasswd+" Idade: "+age)
     })
-
-
-app.get('/payment', (req,res)=>{
-    res.sendFile(path.join(`${__dirname}/views/compra.html`))
-})
-
-app.get('/create-account', (req,res)=>{
-    res.sendFile(path.join(`${__dirname}/views/criar-conta.html`))
-})
 
 app.use('/static',express.static('static'))
 

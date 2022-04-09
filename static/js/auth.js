@@ -1,6 +1,11 @@
+const showFirstPasswd = document.querySelector('img[name=show-first-password]');
+const firstPasswdInput = document.querySelector('input[name=primeiraSenha]');
+const secondPasswdInput = document.querySelector('input[name=confirmarSenha]');
+const showSecondPasswd = document.querySelector('img[name=show-second-password]');
 const form = document.getElementById('form');
 const emailUser = document.querySelector("input[name=emailNewUser]");
-const username = document.querySelector("input[name=username");
+const username = document.querySelector("input[name=username]");
+const lastname = document.querySelector('input[name=lastname]');
 const firstPasswd = document.querySelector('input[name=primeiraSenha]')
 const confirmPasswd = document.querySelector('input[name=confirmarSenha]')
 const errorPasswd = document.querySelector('.erro-senha p');
@@ -15,6 +20,33 @@ function EnterKeyFilter(){
       event.cancel = true;
   }
 }
+
+
+showFirstPasswd.addEventListener('click', ()=>{	
+	showFirstPasswd.classList.toggle('show');
+	if(showFirstPasswd.classList.contains('show')){
+		//mudar input para texto
+		showFirstPasswd.src = "/static/images/icons/olho-fechado.png";
+		firstPasswdInput.type = "text";
+	}else{
+		//mudar input para password
+		showFirstPasswd.src = "/static/images/icons/olho-aberto.png";
+		firstPasswdInput.type = "password";
+	}
+})
+
+showSecondPasswd.addEventListener('click',()=>{
+	showSecondPasswd.classList.toggle('show');
+	if(showSecondPasswd.classList.contains('show')){
+		//mudar input para texto
+		showSecondPasswd.src = "/static/images/icons/olho-fechado.png";
+		secondPasswdInput.type = "text";
+	}else{
+		//mudar input para password
+		showSecondPasswd.src = "/static/images/icons/olho-aberto.png";
+		secondPasswdInput.type = "password";
+	}
+})
 
 
 btn.addEventListener("click",(e)=>{
@@ -40,9 +72,13 @@ btn.addEventListener("click",(e)=>{
 		errorAge.innerHTML += "A idade tem que ser maior que 14";
 		age.classList.add('erro')
 		age.value = "";
+
+		successAlert.style.display = 'none';
+		dangerAlert.style.display = 'block';
 	}else{
 		errorAge.innerHTML = "";
-		age.classList.remove('erro')
+		age.classList.remove('erro');
 	}
 
 })
+

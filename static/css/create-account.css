@@ -33,8 +33,13 @@ form h3{
 	width: 35vw;
 }
 
+.alert-success,
+.alert-danger{
+	display: none;
+}
+
 form input{
-	width: 35vw;
+	width: 37vw;
 	height: 6.5vh;
 	margin: 8px 0;
 	padding-left: 10px;
@@ -54,9 +59,30 @@ form > input::placeholder{
 	padding-left: 10px;
 }
 
+.nome-completo{
+	width: 37vw;
+}
+
+.nome-completo input[name=username]{
+	width: 49%;
+	float: left;
+	display: inline-block;
+	position: relative;
+	font-weight: 300;
+}
+
+.nome-completo input[name=lastname]{
+	width: 49%;
+	float: right;
+	display: inline-block;
+	position: relative;
+	font-weight: 300;
+}
+
 form > input[name=emailNewUser]{
 	text-transform: lowercase;
 }
+
 
 div.erro-senha p{
 	margin-top: 10px;
@@ -140,6 +166,7 @@ form img{
     padding: 0 2%;
     margin: 0 auto;
 }
+
 
 label{
 	color: #606770;
