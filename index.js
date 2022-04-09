@@ -27,39 +27,34 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 let loginSchema = new Schema({
     email: {
         type: String,
-        unique: true,
-        required: true,
-        lowercase: true,
+        required: [true, 'o email é obrigatório'],
+        lowercase: [true, 'é necessário que o email seja escrito em letra minúscula']
     },
     name: {
         type: String,
-        required: true,
-        min: 3,
-        max: 30
+        required: [true, 'o nome é obrigatório'],
+        min: [3, 'o nome tem que ter no mínimo 3 caracteres'],
+        max: [20, 'o nome tem que ter no máximo 20 caracteres']
     },
     lastname: {
         type: String,
-        required: true,
-        min: 3,
-        max: 20
+        required: [true,'o sobrenome é obrigatório'],
+        min: [3, 'o sobrenome tem que ter no mínimo 3 caracteres'],
+        max: [20, 'o sobrenome tem que ter no máximo 20 caracteres']
     },
     password: {
         type: String,
-        required: true,
-        min: 8,
-        max: 20
+        required: [true, 'a senha é obrigatória'],
+        min: [8, 'a senha tem que ter no mínimo 8 caracteres']
     },
     age: {
         type: Number,
-        required: true,
-        min: 0,
-        max: 175
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-        required: true
+        required: [true, 'a idade é obrigatória'],
+        min: [14, 'tem que ter no mínimo 14 anos'],
+        max: [175, 'tem que ter no máximo 175 anos']
     }
+},{
+    timestamps: true
 });
 
 let loginModel = mongoose.model('users', loginSchema );
@@ -150,8 +145,7 @@ app.route('/create-account')
                     name: username,
                     lastname: lastname,
                     password: confirmPasswd,
-                    age: age,
-                    created_at: createUser.createdAt,
+                    age: age
                 });
 
 
@@ -171,7 +165,10 @@ app.route('/create-account')
         }
 
         insertUser();
-        console.log(loginSchema.path('email'));
+        
+        loginSchema.path('email').validate(()=>{
+            return false;
+        },'email já existente')
         console.log("Email: "+newEmailUser+" Nome: "+username+" Sobrenome: "+lastname+" Senha: "+confirmPasswd+" Idade: "+age)
     })
 

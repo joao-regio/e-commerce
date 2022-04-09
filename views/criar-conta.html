@@ -25,10 +25,10 @@
 				<input autocomplete="off" type="text" name="lastname" minlength="3" maxlength="20" placeholder="Seu sobrenome..." required>
 			</div>
 			<input autocomplete="off" type="email" minlength="5" name="newEmailUser" placeholder="Seu email..." required>
-			<input autocomplete="off" type="password" maxlength="20" minlength="8" name="primeiraSenha" placeholder="Sua senha..." required>
+			<input autocomplete="off" type="password" minlength="8" name="primeiraSenha" placeholder="Sua senha..." required>
 			<img name="show-first-password" src="/static/images/icons/olho-aberto.png" />
 			<p class="informar-caractere">A senha tem que conter no minímo 8 caracteres e no máximo 20 caracteres</p>
-			<input autocomplete="off" type="password" maxlength="20" minlength="8" name="confirmarSenha" placeholder="Confirme sua senha..." required>
+			<input autocomplete="off" type="password" minlength="8" name="confirmarSenha" placeholder="Confirme sua senha..." required>
 			<img name="show-second-password" src="/static/images/icons/olho-aberto.png" />
 			<div class="erro-senha"><p></p></div>
 			<label for="idade">Idade</label>
@@ -40,37 +40,5 @@
 		</div>
 	</form>
 	<script src="/static/js/auth.js"></script>
-	<script>
-		const showFirstPasswd = document.querySelector('img[name=show-first-password]');
-		const firstPasswdInput = document.querySelector('input[name=primeiraSenha]');
-		const secondPasswdInput = document.querySelector('input[name=confirmarSenha]');
-		const showSecondPasswd = document.querySelector('img[name=show-second-password]');
-
-		showFirstPasswd.addEventListener('click', ()=>{	
-			showFirstPasswd.classList.toggle('show');
-			if(showFirstPasswd.classList.contains('show')){
-				//mudar input para texto
-				showFirstPasswd.src = "/static/images/icons/olho-fechado.png";
-				firstPasswdInput.type = "text";
-			}else{
-				//mudar input para password
-				showFirstPasswd.src = "/static/images/icons/olho-aberto.png";
-				firstPasswdInput.type = "password";
-			}
-		})
-
-		showSecondPasswd.addEventListener('click',()=>{
-			showSecondPasswd.classList.toggle('show');
-			if(showSecondPasswd.classList.contains('show')){
-				//mudar input para texto
-				showSecondPasswd.src = "/static/images/icons/olho-fechado.png";
-				secondPasswdInput.type = "text";
-			}else{
-				//mudar input para password
-				showSecondPasswd.src = "/static/images/icons/olho-aberto.png";
-				secondPasswdInput.type = "password";
-			}
-		})
-	</script>
 </body>
 </html>
