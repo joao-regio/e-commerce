@@ -40,7 +40,7 @@ form h3{
 
 form input{
 	width: 37vw;
-	height: 6.5vh;
+	height: 6vh;
 	margin: 8px 0;
 	padding-left: 10px;
 	border-radius: 10px;
@@ -57,6 +57,16 @@ form > input::placeholder{
 	font-weight: 300;
 	color: ##8d949e;
 	padding-left: 10px;
+}
+
+input:invalid{
+	animation: shake 300ms;
+}
+
+@keyframes shake{
+	25% { transform: translateX(5px); }
+	50% { transform: translateX(-4px); }
+	75% { transform: translateX(4px); }
 }
 
 .nome-completo{
@@ -85,7 +95,7 @@ form > input[name=emailNewUser]{
 
 
 div.erro-senha p{
-	margin-top: 10px;
+	margin-top: 4px;
 	color: #E81111;
 }
 
@@ -95,6 +105,7 @@ div.erro-senha p{
 
 div.erro-idade p{
 	color: #E81111;
+	margin-bottom: 3px !important;
 }
 
 form label{
@@ -107,7 +118,7 @@ form label{
 form button{
 	width: 35vw;
 	height: 6.5vh;
-	margin: 10px auto;
+	margin: 2px auto;
 	background-color: black;
 	color: #fff;
 	font-size: 20px;
@@ -134,18 +145,10 @@ form button:hover{
 }
 
 form p.informar-caractere{
-	font-weight: 300;
-	font-size: 14px;
-	padding: 4px 0 6px 0;
-	color: #666;
-	margin-top: 0;
-}
-
-form p{
 	color: #444;
 	font-size: 16px;
 	font-weight: 300;
-	margin-top: 15px;
+	margin-bottom: 4px !important;
 }
 
 form a{
@@ -173,6 +176,10 @@ label{
 	font-size: 16px;
 	font-weight: 300;
 	line-height: 20px;
+}
+
+p.possui-conta{
+	margin-top: 7px;
 }
 
 

@@ -4,7 +4,7 @@ const port = 3000;
 const path = require("path");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
-const { check, validationResult } = require("express-validator");
+//const nodemailer = require('nodemailer')
 const mongoDB = "mongodb://localhost:27017/login";
 const Schema = mongoose.Schema;
 
@@ -28,7 +28,8 @@ let loginSchema = new Schema({
     email: {
         type: String,
         required: [true, 'o email é obrigatório'],
-        lowercase: [true, 'é necessário que o email seja escrito em letra minúscula']
+        lowercase: [true, 'é necessário que o email seja escrito em letra minúscula'],
+        unique: [true, 'o email precisa ser único']
     },
     name: {
         type: String,
@@ -111,15 +112,7 @@ app.route('/create-account')
         res.sendFile(path.join(`${__dirname}/views/criar-conta.html`))
     })
 
-    .post(urlencodedParser,[
-        check('username','seu usuário deve ter mais de 3 caracteres')
-            .exists()
-            .isLength({ min: 3 }),
-        check('newEmailUser','email não é válido')
-            .isEmail()
-            .normalizeEmail()
-            .isLength({ min: 5})
-        ], (req,res) =>{
+    .post(urlencodedParser, (req,res) =>{
 
         let newEmailUser = req.body.newEmailUser;
         let username = req.body.username;
@@ -134,7 +127,7 @@ app.route('/create-account')
             console.log('As senhas não são compatíveis');
         }
 
-        const createUser = new loginModel;
+        let createUser = new loginModel;
 
         async function insertUser(){
 
@@ -151,24 +144,14 @@ app.route('/create-account')
 
                 console.log('registrado!')
             }catch(error) {
-
-                const messageError = error.message;
-                console.log(messageError);
-                if(messageError.substr(0,6) === 'E11000'){
-                    //informar usuário que o email já existe
-                    
-
-                    console.log('email já existente');
-                }
+                if(error) throw error;
             }
 
         }
 
+        res.redirect('/create-account')
+
         insertUser();
-        
-        loginSchema.path('email').validate(()=>{
-            return false;
-        },'email já existente')
         console.log("Email: "+newEmailUser+" Nome: "+username+" Sobrenome: "+lastname+" Senha: "+confirmPasswd+" Idade: "+age)
     })
 

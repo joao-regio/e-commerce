@@ -69,7 +69,7 @@ btn.addEventListener("click",(e)=>{
 	if (age.value < 14) {
 		e.preventDefault();
 		errorAge.innerHTML = "";
-		errorAge.innerHTML += "A idade tem que ser maior que 14";
+		errorAge.innerHTML += "Você tem que conter no mínimo 14 anos";
 		age.classList.add('erro')
 		age.value = "";
 

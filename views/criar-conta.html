@@ -18,7 +18,7 @@
 				<p><strong></strong>registrado com sucesso!</p>
 			</div>
 			<div class="alert alert-danger" role="alert">
-  				<p><strong></strong>ogin inválido!</p>
+  				<p><strong></strong>login inválido!</p>
 			</div>
 			<div class="nome-completo">
 				<input autocomplete="off" type="text" minlength="3" maxlength="20" name="username" placeholder="Seu nome..." required>
@@ -35,9 +35,9 @@
 			<input type="number" name="idade" min="0" max="175" placeholder="Sua idade..." required>
 			<div class="erro-idade"><p></p></div>
 			<button type="submit" name="criarConta" onsubmit="return false">Criar conta</button>
-			<p>Já tem uma conta? <a href="/login">Inscreva-se</a></p>
-			<div class="clear"></div>
+			<p class="possui-conta">Já tem uma conta? <a href="/login">Inscreva-se</a></p>
 		</div>
+		<div class="clear"></div>
 	</form>
 	<script src="/static/js/auth.js"></script>
 </body>
