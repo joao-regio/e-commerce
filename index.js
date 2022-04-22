@@ -184,7 +184,7 @@ app.route('/create-account')
 
             // send mail with defined transport object
             let infoEmail = await transporter.sendMail({
-                from: myEmail,
+                from: `João Vitor | e-commerce ${myEmail}`,
                 to: newEmailUser,
                 subject: "Cadastro no e-commerce",
                 text: "Olá"+username+", sua conta foi registrada com sucesso",
@@ -192,7 +192,7 @@ app.route('/create-account')
             });
         
         }
-        sendEmail();
+        sendEmail().catch(console.error);
 
     })
 
