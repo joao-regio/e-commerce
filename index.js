@@ -2,11 +2,13 @@ const express = require("express");
 const app = express();
 const port = 3000;
 const path = require("path");
+const nodemailer = require('nodemailer');
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 //const nodemailer = require('nodemailer')
 const mongoDB = "mongodb://localhost:27017/login";
 const Schema = mongoose.Schema;
+
 
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true}).then(()=>{
@@ -121,6 +123,7 @@ app.route('/create-account')
         let confirmPasswd = req.body.confirmarSenha;
         let age = req.body.idade;
 
+
         if(firstPasswd === confirmPasswd){
             console.log('As senhas são compatíveis');
         }else {
@@ -152,8 +155,47 @@ app.route('/create-account')
         res.redirect('/create-account')
 
         insertUser();
-        console.log("Email: "+newEmailUser+" Nome: "+username+" Sobrenome: "+lastname+" Senha: "+confirmPasswd+" Idade: "+age)
+        console.log("Email: "+newEmailUser+" Nome: "+username+" Sobrenome: "+lastname+" Senha: "+confirmPasswd+" Idade: "+age);
+
+        const myEmail = 'joaovregio@outlook.com';
+        const myPasswd = 'DogItalia2';
+
+
+        async function sendEmail() {
+
+            let transporter = nodemailer.createTransport({
+                host: "smtp.office365.com",
+                port: 587,
+                secure: false,
+                auth: {
+                  user: myEmail,
+                  pass: myPasswd,
+                },
+            });
+
+            // verify connection configuration
+            transporter.verify(function (error, success) {
+              if (error) {
+                console.log(error);
+              } else {
+                console.log("Servidor está pronto para mandar mensagens");
+              }
+            });
+
+            // send mail with defined transport object
+            let infoEmail = await transporter.sendMail({
+                from: myEmail,
+                to: newEmailUser,
+                subject: "Cadastro no e-commerce",
+                text: "Olá"+username+", sua conta foi registrada com sucesso",
+                html: "Olá <b>"+username+"</b>, sua conta foi registrada com sucesso",
+            });
+        
+        }
+        sendEmail();
+
     })
+
 
 app.use('/static',express.static('static'))
 
